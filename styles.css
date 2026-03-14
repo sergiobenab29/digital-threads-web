@@ -1,0 +1,602 @@
+/*** VSCodeEDU preview fix 
+
+  Purpose:
+  - Fix VSCodeEDU issue that causes a white border to show around
+    the preview window
+
+  When To Modify:
+  - If you change the background color of your webpage, you may need to update this rule too.
+***/
+html {
+    background-color: var(--bg-color);
+    scroll-padding-top: 80px; 
+    scroll-behavior: smooth;
+}
+
+/*** body ***
+  
+  Purpose:
+  - Add style rules for the body of your webpage
+  - This is useful if you want a rule to apply to EVERYTHING on your page
+    - (Tip: You can always override these rules later in the stylesheet)
+
+  When To Modify:
+  - [ ] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+body {
+    margin: 0; 
+  background-color: var(--bg-color);
+  font-size: 16px;
+  color: var(--text-color);
+  font-family: Tahoma, sans-serif;
+  min-height: 100vh;
+}
+main, .page-content, .video-section, section {
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; 
+  background-color: #070707;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 30px;
+  padding: 0 20px;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+
+.navbar a {
+  color: #ffcc66;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  line-height: 1; 
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin: 0;
+}
+
+.navbar a:hover {
+  background-color: #ff4081; 
+  color: white;
+}
+/*** Text ***
+  
+  Purpose: 
+  - Add style rules for headings (h1-6),
+    paragraphs (p), links (a), and buttons
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+h1 {
+    
+                font-family: monospace;
+                font-size: 65px;  
+}
+
+h2 {
+    color: var(--accent-color-darkest);
+    font-size: 50px;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+h3 {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 50px;
+    font-style: bold;
+}
+
+h4 {
+   color: var(--text-color); 
+    font-size: 25px;
+    text-align: center;
+    
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 15px 0;
+    color: #666666;
+}
+ul {
+  padding-left: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc; 
+}
+
+li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #444; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color-medium);
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.video-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  margin-left: 150px;
+}
+
+.video-section iframe {
+  flex: 1;
+  max-width: 100%;
+}
+.video-section p {
+  flex: 1;
+  color: #666666; 
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+a:hover {
+    background-color: var(--accent-color-light);
+    transform: scale(1.02);
+}
+
+a:active {
+    background-color: var(--accent-color-medium);
+    color: white;
+}
+
+a,
+a * {
+    
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.header-title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+.header-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 70px;
+}
+
+.header-button {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.event-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  background: linear-gradient(120deg, #ff6666, #ffcc66);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.event-card h3 {
+  margin-top: 10px;
+  font-size: 35px;
+  color: white;
+}
+.event-card p {
+  font-size: 20px;
+  color: black;
+}
+
+event-card:first-child {
+  border: 2px solid var(--accent-color-medium);
+}
+
+.event-card:nth-child(odd) {
+  background-color: #fff3e0;
+}
+
+.event-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .event-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .video-section {
+    flex-direction: column;
+    margin-left: 0;
+  }
+}
+
+
+.link-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.block article p {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+  text-align: center;
+  color: #444;
+  margin-bottom: 60px;
+}
+
+.dark-mode{
+background-color: var(--bg-color-dark-mode);
+color: var(--text-color-dark-mode);
+}
+
+.dark-mode p, 
+.dark-mode li {
+    color: var(--text-color-dark-mode);
+}
+
+.dark-mode .navbar {
+    background-color: #0d0d1a;
+}
+
+.dark-mode .block {
+    background-color: #2D2D44; 
+    border-color: #80FF00; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .block article p {
+    color: #F0F0F0; 
+}
+
+.dark-mode h2 {
+    color: var(--text-color-dark-mode); 
+}
+
+.dark-mode h3 {
+    color: var(--accent-color-medium); 
+}
+
+.dark-mode h4 {
+    color: var(--accent-color-dark); 
+}
+
+.dark-mode .event-card {
+    background: linear-gradient(120deg, #33334d, #2d2d44); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .event-card p {
+    color: #F0F0F0; 
+}
+.dark-mode .rsvp-participants {
+    background-color: var(--bg-color-dark-mode); 
+    border-color: var(--accent-color-medium);
+}
+.dark-mode .rsvp-participants h3,
+.dark-mode .rsvp-participants p {
+    color: var(--text-color-dark-mode);
+}
+
+
+
+
+#theme-button, 
+#reduce-motion-button {
+    background: linear-gradient(90deg, #ff4081, #ffcc66); 
+    color: white;
+    font-weight: lighter; 
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace; 
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.5); 
+}
+#theme-button:hover,
+#reduce-motion-button:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+/*** footer ***
+  
+  Purpose:
+  - Add style rules for your website's footer section
+
+  When To Modify:
+  - [ ] Project 3 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.footer { /* Example B: This styles elements with class="footer" */
+    
+}
+
+/*** Navbar [PLACEHOLDER] [ADDED IN UNIT 4] ***/
+
+/*** About Section ***
+  
+  Purpose:
+  - Add style rules for your website's About section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
+
+#rsvp {
+    max-width: 1200px;
+    margin: 40px auto; 
+    padding: 60px 0; 
+    text-align: center;
+}
+
+
+.rsvp-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    width: 90%; 
+    max-width: 900px; 
+    margin: 30px auto; 
+    padding-bottom: 50px; 
+}
+
+.rsvp-para {
+    width: 0; 
+    padding: 0;
+}
+.rsvp-para p, .rsvp-para h3 {
+    text-align: left;
+}
+
+
+.rsvp-participants {
+  width: fit-content;
+    border: 1px solid var(--accent-color-light);
+    border-radius: 8px;
+    padding: 25px; 
+    background-color: #f7f7f7; 
+    text-align: left;
+    
+}.rsvp-intro-text {
+    max-width: 900px;
+    width: 90%; 
+    
+    margin: 30px auto; 
+    
+    text-align: left; 
+}
+
+.form-container {
+   max-width: 600px;
+    margin: 40px auto; 
+    padding: 30px; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+#rsvp-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#rsvp-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#rsvp-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--accent-color-medium);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--error-color-border); 
+  background-color: var(--error-color);     
+}
+/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+.modal {
+display: none;   
+  position: fixed; 
+  z-index: 2;
+  
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.7); 
+
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    padding: 50px;
+    width: 55%;
+    max-width: 500px;
+
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+    border: 5px solid var(--accent-color-medium);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
+#modal-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#close-modal-button {
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #ff4081; /* Using a vibrant color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#close-modal-button:hover {
+    background-color: #e0004f;
+}
+/*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/
+
+:root {
+    /* Light Mode */
+    --bg-color: #ffffff;
+    --text-color: #0b0b0b;
+
+    /* Dark Mode */
+    --bg-color-dark-mode: #1A1A2E;;
+    --text-color-dark-mode: #F0F0F0;
+
+    /* Accent Colors */
+    --accent-color-light: #4E4070;  
+    --accent-color-medium: #80FF00; 
+    --accent-color-dark: #A9FF38;   
+    --accent-color-darkest: #070707; 
+    --accent-color-green: #28eb76;
+
+    /* Error Colors */
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
